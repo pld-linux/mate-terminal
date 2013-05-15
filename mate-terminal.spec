@@ -1,11 +1,12 @@
 Summary:	MATE Terminal Emulator
 Name:		mate-terminal
 Version:	1.6.1
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
 # Source0-md5:	c9e1c80d9184aca710e92bd944f2bb7c
+Patch0:		wordseps.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	bison
 BuildRequires:	dconf-devel
@@ -28,6 +29,7 @@ MATE Terminal Emulator.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 NOCONFIGURE=1 ./autogen.sh
