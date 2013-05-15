@@ -10,15 +10,15 @@ URL:		http://mate-desktop.org/
 BuildRequires:	bison
 BuildRequires:	dconf-devel
 BuildRequires:	desktop-file-utils
-BuildRequires:	flex
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	glib2-devel >= 1:2.30
 BuildRequires:	gtk+2-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	mate-common
-BuildRequires:	mate-desktop-devel
 BuildRequires:	mate-doc-utils
 BuildRequires:	rpmbuild(find_lang) >= 1.36
 BuildRequires:	vte0-devel
+BuildRequires:	xorg-lib-libSM-devel
 Requires:	glib2 >= 1:2.26.0
 Requires:	mate-desktop
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
