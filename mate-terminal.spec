@@ -17,6 +17,7 @@ BuildRequires:	libxml2-devel
 BuildRequires:	mate-common
 BuildRequires:	mate-desktop-devel
 BuildRequires:	mate-doc-utils
+BuildRequires:	rpmbuild(find_lang) >= 1.36
 BuildRequires:	vte0-devel
 Requires:	glib2 >= 1:2.26.0
 Requires:	mate-desktop
