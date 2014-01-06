@@ -5,12 +5,12 @@
 Summary:	MATE Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla środowiska MATE
 Name:		mate-terminal
-Version:	1.6.1
-Release:	3
+Version:	1.6.2
+Release:	1
 License:	GPL v3+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	c9e1c80d9184aca710e92bd944f2bb7c
+# Source0-md5:	30d12c11897e630ba3af07282adffd4d
 Patch0:		wordseps.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
@@ -29,6 +29,7 @@ BuildRequires:	mate-common
 BuildRequires:	mate-doc-utils
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.36
+BuildRequires:	sed >= 4.0
 %{!?with_gtk3:BuildRequires:	vte0-devel >= 0.25.91}
 %{?with_gtk3:BuildRequires:	vte-devel >= 0.25.91}
 BuildRequires:	xorg-lib-libSM-devel
@@ -52,6 +53,8 @@ Emulator terminala dla środowiska MATE.
 %setup -q
 %patch0 -p1
 
+%{__sed} -i -e '1s,/usr/bin/env python,/usr/bin/python,' mate-terminal.wrapper
+
 %build
 mate-doc-common --copy
 mate-doc-prepare --copy --force
@@ -74,7 +77,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 desktop-file-install \
-	--remove-category="MATE" \
 	--add-category="X-Mate" \
 	--delete-original \
 	--dir=$RPM_BUILD_ROOT%{_desktopdir} \
@@ -95,6 +97,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/mate-terminal
+%attr(755,root,root) %{_bindir}/mate-terminal.wrapper
 %{_mandir}/man1/mate-terminal.1*
 %{_desktopdir}/mate-terminal.desktop
 %{_datadir}/glib-2.0/schemas/org.mate.terminal.gschema.xml

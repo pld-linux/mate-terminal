@@ -26,35 +26,3 @@ similar patches:
        <summary>Characters that are considered "part of a word"</summary>
        <description>When selecting text by word, sequences of these characters are considered single words. Ranges can be given as  "A-Z". Literal hyphen (not expressing a range) should be the first character given.</description>
      </key>
---- mate-terminal-1.6.1/./help/ro/mate-terminal.xml~	2013-04-09 16:54:21.000000000 +0300
-+++ mate-terminal-1.6.1/./help/ro/mate-terminal.xml	2013-05-15 22:52:16.098459471 +0300
-@@ -911,7 +911,7 @@
-                   informaţii despre cum să selectaţi textul după cuvinte.
-                 </para>
-                 <para>
--                  Implicit: -A-Za-z0-9,./?%&amp;#
-+                  Implicit: -A-Za-z0-9,./?%&amp;#:_=+@~;
-                 </para>
-              </listitem>
-           </varlistentry>
---- mate-terminal-1.6.1/./help/zh_TW/mate-terminal.xml~	2013-04-09 16:54:21.000000000 +0300
-+++ mate-terminal-1.6.1/./help/zh_TW/mate-terminal.xml	2013-05-15 22:53:04.090657219 +0300
-@@ -812,6 +812,7 @@
-                 </para>
-                 <!-- <para>
-                   Default: -A-Za-z0-9,./?%&amp;#:_ 
-+                  Default: -A-Za-z0-9,./?%&amp;#:_=+@~;
-                 </para> -->
-              </listitem>
-           </varlistentry>
---- mate-terminal-1.6.1/./help/ja/mate-terminal.xml~	2013-04-09 16:54:21.000000000 +0300
-+++ mate-terminal-1.6.1/./help/ja/mate-terminal.xml	2013-05-15 22:53:30.775214357 +0300
-@@ -941,7 +941,7 @@
- linkend="mate-terminal-contents"/> を参照してください。
-                 </para>
-                 <!-- <para>
--                  初期値: -A-Za-z0-9,./?%&amp;#:_ 
-+                  初期値: -A-Za-z0-9,./?%&amp;#:_=+@~;
-                 </para> -->
-              </listitem>
-           </varlistentry>
