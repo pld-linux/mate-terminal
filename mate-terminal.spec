@@ -1,12 +1,12 @@
 #
 # Conditional build:
 %bcond_with	gtk3	# use GTK+ 3.x instead of 2.x
-#
+
 Summary:	MATE Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla środowiska MATE
 Name:		mate-terminal
 Version:	1.6.2
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
@@ -76,6 +76,10 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# not using alternatives in pld, drop
+# https://github.com/mate-desktop/mate-terminal/issues/9
+%{__rm} $RPM_BUILD_ROOT%{_bindir}/mate-terminal.wrapper
+
 desktop-file-install \
 	--add-category="X-Mate" \
 	--delete-original \
@@ -97,7 +101,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/mate-terminal
-%attr(755,root,root) %{_bindir}/mate-terminal.wrapper
 %{_mandir}/man1/mate-terminal.1*
 %{_desktopdir}/mate-terminal.desktop
 %{_datadir}/glib-2.0/schemas/org.mate.terminal.gschema.xml
