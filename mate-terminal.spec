@@ -5,12 +5,12 @@
 Summary:	MATE Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla środowiska MATE
 Name:		mate-terminal
-Version:	1.6.2
-Release:	2
+Version:	1.8.0
+Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	30d12c11897e630ba3af07282adffd4d
+Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
+# Source0-md5:	45c1009d94be8521a24c8fad71c8716d
 Patch0:		wordseps.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
@@ -26,7 +26,6 @@ BuildRequires:	glib2-devel >= 1:2.30
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libtool >= 1:1.4.3
 BuildRequires:	mate-common
-BuildRequires:	mate-doc-utils
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.36
 BuildRequires:	sed >= 4.0
@@ -34,6 +33,7 @@ BuildRequires:	sed >= 4.0
 %{?with_gtk3:BuildRequires:	vte-devel >= 0.25.91}
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	yelp-tools
 Requires:	dconf >= 0.13.4
 Requires:	glib2 >= 1:2.30
 %{!?with_gtk3:Requires:	gtk+2 >= 2:2.18.0}
@@ -57,7 +57,6 @@ Emulator terminala dla środowiska MATE.
 
 %build
 mate-doc-common --copy
-mate-doc-prepare --copy --force
 %{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
@@ -79,6 +78,8 @@ rm -rf $RPM_BUILD_ROOT
 # not using alternatives in pld, drop
 # https://github.com/mate-desktop/mate-terminal/issues/9
 %{__rm} $RPM_BUILD_ROOT%{_bindir}/mate-terminal.wrapper
+
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/cmn
 
 desktop-file-install \
 	--add-category="X-Mate" \
