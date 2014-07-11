@@ -79,15 +79,13 @@ rm -rf $RPM_BUILD_ROOT
 # https://github.com/mate-desktop/mate-terminal/issues/9
 %{__rm} $RPM_BUILD_ROOT%{_bindir}/mate-terminal.wrapper
 
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/cmn
-
 desktop-file-install \
 	--add-category="X-Mate" \
 	--delete-original \
 	--dir=$RPM_BUILD_ROOT%{_desktopdir} \
 	$RPM_BUILD_ROOT%{_desktopdir}/*.desktop
 
-%find_lang %{name} --with-mate --with-omf
+%find_lang %{name} --with-mate
 
 %clean
 rm -rf $RPM_BUILD_ROOT
