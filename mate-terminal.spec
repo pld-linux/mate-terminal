@@ -5,12 +5,12 @@
 Summary:	MATE Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla środowiska MATE
 Name:		mate-terminal
-Version:	1.8.1
-Release:	2
+Version:	1.10.0
+Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
-# Source0-md5:	308e35fbcad6b75414276a3453cc2d6a
+Source0:	http://pub.mate-desktop.org/releases/1.10/%{name}-%{version}.tar.xz
+# Source0-md5:	a0ec7ec52b4b1013af7ff7a2187d1455
 Patch0:		wordseps.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
@@ -20,27 +20,28 @@ BuildRequires:	dconf-devel >= 0.13.4
 BuildRequires:	desktop-file-utils
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-tools >= 0.10.40
-BuildRequires:	glib2-devel >= 1:2.30
-%{!?with_gtk3:BuildRequires:	gtk+2-devel >= 2:2.18.0}
+BuildRequires:	glib2-devel >= 1:2.36.0
+%{!?with_gtk3:BuildRequires:	gtk+2-devel >= 2:2.24.0}
 %{?with_gtk3:BuildRequires:	gtk+3-devel >= 3.0.0}
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libtool >= 1:1.4.3
 BuildRequires:	mate-common
+BuildRequires:	mate-desktop-devel >= 1.9.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.36
 BuildRequires:	sed >= 4.0
-%{!?with_gtk3:BuildRequires:	vte0-devel >= 0.25.91}
-%{?with_gtk3:BuildRequires:	vte-devel >= 0.25.91}
+%{!?with_gtk3:BuildRequires:	vte0-devel >= 0.27.1}
+%{?with_gtk3:BuildRequires:	vte2.90-devel >= 0.27.1}
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	yelp-tools
 Requires:	dconf >= 0.13.4
-Requires:	glib2 >= 1:2.30
-%{!?with_gtk3:Requires:	gtk+2 >= 2:2.18.0}
+Requires:	glib2 >= 1:2.36.0
+%{!?with_gtk3:Requires:	gtk+2 >= 2:2.24.0}
 %{?with_gtk3:Requires:	gtk+3 >= 3.0.0}
-Requires:	mate-desktop
-%{!?with_gtk3:Requires:	vte0 >= 0.25.91}
-%{?with_gtk3:Requires:	vte >= 0.25.91}
+Requires:	mate-desktop >= 1.9.0
+%{!?with_gtk3:Requires:	vte0 >= 0.27.1}
+%{?with_gtk3:Requires:	vte2.90 >= 0.27.1}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -102,5 +103,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/mate-terminal
 %{_mandir}/man1/mate-terminal.1*
 %{_desktopdir}/mate-terminal.desktop
+%{_datadir}/appdata/mate-terminal.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.mate.terminal.gschema.xml
 %{_datadir}/mate-terminal
