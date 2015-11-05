@@ -5,12 +5,12 @@
 Summary:	MATE Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla środowiska MATE
 Name:		mate-terminal
-Version:	1.10.1
+Version:	1.12.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.10/%{name}-%{version}.tar.xz
-# Source0-md5:	7b9d4d665224c33ee70a6219ee493657
+Source0:	http://pub.mate-desktop.org/releases/1.12/%{name}-%{version}.tar.xz
+# Source0-md5:	075a8e853d63d85178c3fe44006b640e
 Patch0:		wordseps.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
@@ -23,7 +23,7 @@ BuildRequires:	gettext-tools >= 0.10.40
 BuildRequires:	glib2-devel >= 1:2.36.0
 %{!?with_gtk3:BuildRequires:	gtk+2-devel >= 2:2.24.0}
 %{?with_gtk3:BuildRequires:	gtk+3-devel >= 3.0.0}
-BuildRequires:	intltool >= 0.40.0
+BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libtool >= 1:1.4.3
 BuildRequires:	mate-common
 BuildRequires:	mate-desktop-devel >= 1.9.0
@@ -32,7 +32,7 @@ BuildRequires:	rpmbuild(find_lang) >= 1.36
 BuildRequires:	sed >= 4.0
 %{!?with_gtk3:BuildRequires:	vte0-devel >= 0.27.1}
 %{?with_gtk3:BuildRequires:	vte2.90-devel >= 0.27.1}
-BuildRequires:	xorg-lib-libSM-devel
+BuildRequires:	xorg-lib-libSM-devel >= 1.0.0
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	yelp-tools
 Requires:	dconf >= 0.13.4
