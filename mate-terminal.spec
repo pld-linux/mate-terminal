@@ -5,12 +5,12 @@
 Summary:	MATE Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla środowiska MATE
 Name:		mate-terminal
-Version:	1.12.0
+Version:	1.12.1
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.12/%{name}-%{version}.tar.xz
-# Source0-md5:	075a8e853d63d85178c3fe44006b640e
+# Source0-md5:	2bf11e16a2de72cd2ef2382073f0b26b
 Patch0:		wordseps.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
@@ -29,8 +29,8 @@ BuildRequires:	mate-desktop-devel >= 1.9.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.36
 BuildRequires:	sed >= 4.0
-%{!?with_gtk3:BuildRequires:	vte0-devel >= 0.27.1}
-%{?with_gtk3:BuildRequires:	vte2.90-devel >= 0.27.1}
+%{!?with_gtk3:BuildRequires:	vte0-devel >= 0.28}
+%{?with_gtk3:BuildRequires:	vte2.90-devel >= 0.38}
 BuildRequires:	xorg-lib-libSM-devel >= 1.0.0
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	yelp-tools
@@ -38,8 +38,8 @@ Requires:	glib2 >= 1:2.36.0
 %{!?with_gtk3:Requires:	gtk+2 >= 2:2.24.0}
 %{?with_gtk3:Requires:	gtk+3 >= 3.0.0}
 Requires:	mate-desktop >= 1.9.0
-%{!?with_gtk3:Requires:	vte0 >= 0.27.1}
-%{?with_gtk3:Requires:	vte2.90 >= 0.27.1}
+%{!?with_gtk3:Requires:	vte0 >= 0.28}
+%{?with_gtk3:Requires:	vte2.90 >= 0.38}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
