@@ -12,6 +12,7 @@ URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	bison
+BuildRequires:	dconf-devel >= 0.13.4
 BuildRequires:	desktop-file-utils
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-tools >= 0.10.40
@@ -27,6 +28,7 @@ BuildRequires:	vte-devel >= 0.38
 BuildRequires:	xorg-lib-libSM-devel >= 1.0.0
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	yelp-tools
+Requires:	dconf >= 0.13.4
 Requires:	glib2 >= 1:2.36.0
 Requires:	gtk+3 >= 3.14.0
 Requires:	vte >= 0.38
