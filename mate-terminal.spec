@@ -1,12 +1,12 @@
 Summary:	MATE Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla środowiska MATE
 Name:		mate-terminal
-Version:	1.18.2
+Version:	1.20.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.18/%{name}-%{version}.tar.xz
-# Source0-md5:	ddad280dcb7c4576f8bb5b27cb2616a7
+Source0:	http://pub.mate-desktop.org/releases/1.20/%{name}-%{version}.tar.xz
+# Source0-md5:	5d4cf258d6e40abc5c31db8a98f6c89d
 Patch0:		wordseps.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
@@ -16,22 +16,22 @@ BuildRequires:	dconf-devel >= 0.13.4
 BuildRequires:	desktop-file-utils
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-tools >= 0.10.40
-BuildRequires:	glib2-devel >= 1:2.36.0
-BuildRequires:	gtk+3-devel >= 3.14.0
+BuildRequires:	glib2-devel >= 1:2.50.0
+BuildRequires:	gtk+3-devel >= 3.22.0
 BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libtool >= 1:1.4.3
 BuildRequires:	mate-common
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.36
 BuildRequires:	sed >= 4.0
-BuildRequires:	vte-devel >= 0.38
+BuildRequires:	vte-devel >= 0.46
 BuildRequires:	xorg-lib-libSM-devel >= 1.0.0
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	yelp-tools
 Requires:	dconf >= 0.13.4
-Requires:	glib2 >= 1:2.36.0
-Requires:	gtk+3 >= 3.14.0
-Requires:	vte >= 0.38
+Requires:	glib2 >= 1:2.50.0
+Requires:	gtk+3 >= 3.22.0
+Requires:	vte >= 0.46
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
