@@ -1,12 +1,12 @@
 Summary:	MATE Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla środowiska MATE
 Name:		mate-terminal
-Version:	1.20.0
+Version:	1.20.1
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.20/%{name}-%{version}.tar.xz
-# Source0-md5:	5d4cf258d6e40abc5c31db8a98f6c89d
+# Source0-md5:	7b243df45e6abfa4381331e3b8dd762f
 Patch0:		wordseps.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
@@ -69,7 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 # https://github.com/mate-desktop/mate-terminal/issues/9
 %{__rm} $RPM_BUILD_ROOT%{_bindir}/mate-terminal.wrapper
 
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{frp,ku_IQ,jv,pms}
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{es_ES,frp,jv,ku_IQ,nqo,pms}
 
 desktop-file-install \
 	--add-category="X-Mate" \
