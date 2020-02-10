@@ -1,12 +1,12 @@
 Summary:	MATE Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla środowiska MATE
 Name:		mate-terminal
-Version:	1.22.1
+Version:	1.24.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.22/%{name}-%{version}.tar.xz
-# Source0-md5:	aae3bba8ae889ce6a9f1db8badbd2d18
+Source0:	http://pub.mate-desktop.org/releases/1.24/%{name}-%{version}.tar.xz
+# Source0-md5:	1b6afd27eb2fb1da6ea87dbeb907b2ba
 Patch0:		wordseps.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
@@ -15,10 +15,9 @@ BuildRequires:	bison
 BuildRequires:	dconf-devel >= 0.13.4
 BuildRequires:	desktop-file-utils
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	gettext-tools >= 0.10.40
+BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.50.0
 BuildRequires:	gtk+3-devel >= 3.22.0
-BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libtool >= 1:1.4.3
 BuildRequires:	mate-common
 BuildRequires:	pkgconfig
@@ -48,7 +47,6 @@ Emulator terminala dla środowiska MATE.
 
 %build
 mate-doc-common --copy
-%{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -69,8 +67,8 @@ rm -rf $RPM_BUILD_ROOT
 # https://github.com/mate-desktop/mate-terminal/issues/9
 %{__rm} $RPM_BUILD_ROOT%{_bindir}/mate-terminal.wrapper
 
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{es_ES,frp,jv,ku_IQ,nqo,pms}
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/help/{es_ES,ku_IQ}
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{es_ES,frp,ie,jv,ku_IQ,nqo,pms}
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/help/{es_ES,ie,ku_IQ}
 
 desktop-file-install \
 	--add-category="X-Mate" \
