@@ -18,7 +18,7 @@ similar patches:
 --- mate-terminal-1.6.1/./src/org.mate.terminal.gschema.xml.in~	2013-04-09 16:54:21.000000000 +0300
 +++ mate-terminal-1.6.1/./src/org.mate.terminal.gschema.xml.in	2013-05-15 22:51:26.329501283 +0300
 @@ -129,7 +129,7 @@
-       <description>If true, don't make a noise when applications send the  escape sequence for the terminal bell.</description>
+       <description>If true, selection is automatically copied to clipboard buffer.</description>
      </key>
      <key name="word-chars" type="s">
 -      <default>'-A-Za-z0-9,./?%&amp;#:_=+@~'</default>
